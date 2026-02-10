@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My SMM Panel</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input { padding: 10px; margin: 10px; width: 80%; border: 1px solid #ddd; }
+        button { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>SMM Booster</h1>
+        <p>Enter your Link and choose a service</p>
+        <input type="text" id="link" placeholder="https://instagram.com">
+        <br>
+        <button onclick="orderBoost()">Order Boost Now</button>
+    </div>
+
+    <script>
+        function orderBoost() {
+            alert('Connecting to API... (We will set this up next!)');
+        }
+    </script>
+</body>
+</html>
