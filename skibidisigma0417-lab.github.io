@@ -17,10 +17,10 @@
         <br>
         <button onclick="orderBoost()">Order Boost Now</button>
     </div>
-    <!-- 1. The "Engine" that makes Firebase work (Fixed Links) -->
- <script src="https://www.gstatic.com"></script>
-<script src="https://www.gstatic.com"></script>
-
+    
+        <!-- 1. The "Engine" that makes Firebase work -->
+    <script src="https://www.gstatic.com"></script>
+    <script src="https://www.gstatic.com"></script>
 
     <script>
       // 2. Your specific project keys
@@ -38,7 +38,7 @@
       firebase.initializeApp(firebaseConfig);
       const database = firebase.database();
 
-      // 4. The "Brain" that sends the link to your database
+      // 4. The function that makes the button work
       function orderBoost() {
         const linkVal = document.getElementById('link').value;
         if (linkVal) {
@@ -59,7 +59,6 @@
   </body>
 </html>
 
-    
     
             
         
