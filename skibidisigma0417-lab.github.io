@@ -18,9 +18,10 @@
         <button onclick="orderBoost()">Order Boost Now</button>
     </div>
     
-        <!-- 1. The "Engine" that makes Firebase work -->
-    <script src="https://www.gstatic.com"></script>
-    <script src="https://www.gstatic.com"></script>
+ <script src="https://www.gstatic.com"></script>
+<script src="https://www.gstatic.com"></script>      
+
+
 
     <script>
       // 2. Your specific project keys
