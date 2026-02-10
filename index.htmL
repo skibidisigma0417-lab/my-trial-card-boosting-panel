@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My SMM Panel</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input { padding: 10px; margin: 10px; width: 80%; border: 1px solid #ddd; }
+        button { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>SMM Booster</h1>
+        <p>Enter your Link and choose a service</p>
+        <input type="text" id="link" placeholder="https://instagram.com">
+        <br>
+        <button onclick="orderBoost()">Order Boost Now</button>
+    </div>
+    <!-- 1. The "Engine" that makes Firebase work (Fixed Links) -->
+    <script src="https://www.gstatic.com"></script>
+<script src="https://www.gstatic.com"></script>
+
+
+    <script>
+      // 2. Your specific project keys
+      const firebaseConfig = {
+        apiKey: "AIzaSyAbjmXUHMWrDeD5pqw-1-tEMK9_EQ7Brm0",
+        authDomain: "my-boosting-panel.firebaseapp.com",
+        projectId: "my-boosting-panel",
+        storageBucket: "my-boosting-panel.firebasestorage.app",
+        messagingSenderId: "440887389162",
+        appId: "1:440887389162:web:20ad86286aa9d3d0a82093",
+        databaseURL: "https://my-boosting-panel-default-rtdb.firebaseio.com"
+      };
+
+      // 3. Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const database = firebase.database();
+
+      // 4. The "Brain" that sends the link to your database
+      function orderBoost() {
+        const linkVal = document.getElementById('link').value;
+        if (linkVal) {
+          database.ref('orders').push({
+            url: linkVal,
+            status: 'pending',
+            timestamp: Date.now()
+          }).then(() => {
+            alert('Success! Order sent to your database.');
+          }).catch((error) => {
+            alert('Error: ' + error.message);
+          });
+        } else {
+          alert('Please enter a link first!');
+        }
+      }
+    </script>
+  </body>
+</html>
+
+    
+    
+            
+        
+    
+
+
